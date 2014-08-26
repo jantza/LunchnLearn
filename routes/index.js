@@ -1,7 +1,7 @@
 // Connect to MongoDB using Mongoose
 var mongoose = require('mongoose');
 var db;
-if (process.env.VCAP_SERVICES) {
+if (process.env.CUSTOMCONNSTR_MONGOLAB_URI) {
    var env = JSON.parse(process.env.VCAP_SERVICES);
    db = mongoose.createConnection(process.env.CUSTOMCONNSTR_MONGOLAB_URI);
 } else {
